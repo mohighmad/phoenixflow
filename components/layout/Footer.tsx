@@ -100,11 +100,11 @@ export function Footer({ locale }: FooterProps) {
 
       <div className="pf-container relative py-16 sm:py-20">
         <div
-          className={`grid gap-12 border border-[rgb(223_207_183_/_0.16)] bg-[rgb(17_23_28_/_0.46)] p-6 shadow-[0_34px_90px_-58px_rgba(0,0,0,0.92),0_1px_0_rgb(255_255_255_/_0.06)_inset] backdrop-blur-[3px] sm:p-8 lg:grid-cols-[1.16fr_0.72fr_0.9fr] lg:gap-12 ${
+          className={`grid gap-x-7 gap-y-6 border border-[rgb(223_207_183_/_0.16)] bg-[rgb(17_23_28_/_0.46)] p-6 shadow-[0_34px_90px_-58px_rgba(0,0,0,0.92),0_1px_0_rgb(255_255_255_/_0.06)_inset] backdrop-blur-[3px] sm:gap-y-8 sm:p-8 lg:grid-cols-[1.16fr_0.72fr_0.9fr] lg:gap-12 ${
             isArabic ? "text-right" : ""
           }`}
         >
-        <div className="space-y-7">
+        <div className="order-1 mb-1 space-y-6 sm:space-y-7 lg:mb-0">
           <div className={`flex ${isArabic ? "justify-start" : ""}`}>
             <div className="relative py-1">
               <span
@@ -147,13 +147,13 @@ export function Footer({ locale }: FooterProps) {
         </div>
 
         <div
-          className={`flex w-full flex-col ${
+          className={`order-2 flex w-full flex-col ${
             isArabic ? "items-end lg:justify-self-center" : "items-start lg:justify-self-center"
           }`}
         >
           <div
             className={`flex w-full max-w-[13.5rem] flex-col ${
-              isArabic ? "items-end text-right" : "items-start"
+              isArabic ? "ms-auto items-end text-right" : "items-start"
             }`}
           >
             <p
@@ -183,7 +183,13 @@ export function Footer({ locale }: FooterProps) {
           </div>
         </div>
 
-        <div className={isArabic ? "flex flex-col items-start lg:max-w-sm lg:justify-self-start" : ""}>
+        <div
+          className={`order-3 border-t border-[rgb(223_207_183_/_0.1)] pt-5 sm:pt-6 lg:border-t-0 lg:pt-0 ${
+            isArabic
+              ? "ms-auto flex w-full max-w-sm flex-col items-end text-right lg:justify-self-start lg:ms-0 lg:items-start"
+              : ""
+          }`}
+        >
           <p
             className={
               isArabic
@@ -194,7 +200,7 @@ export function Footer({ locale }: FooterProps) {
             {site.footer.contactLabel[locale]}
           </p>
 
-          <div className="mt-5">
+          <div className={`mt-5 ${isArabic ? "ms-auto w-full text-right" : ""}`}>
             <p
               className={
                 isArabic
@@ -213,7 +219,7 @@ export function Footer({ locale }: FooterProps) {
             >
               {locale === "ar" ? "تواصل عبر" : "Reach us via"}
             </p>
-            <div className={`mt-3 flex items-center gap-3 ${isArabic ? "justify-start" : ""}`}>
+            <div className={`mt-3 flex items-center gap-3 ${isArabic ? "ms-auto justify-end" : ""}`}>
               {iconButtons.map((button) => (
                 <a
                   key={button.key}
