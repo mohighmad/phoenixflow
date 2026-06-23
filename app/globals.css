@@ -460,4 +460,16 @@ img {
     font-size: 1rem;
     line-height: 1.78;
   }
+
+  /* Mobile-only: center editorial body sections (footer/header/hero excluded) */
+  #positioning,
+  #methodology,
+  #systems,
+  #transformation,
+  #positioning *,
+  #methodology *,
+  #systems *,
+  #transformation * {
+    text-align: center !important;
+  }
 }
