@@ -104,8 +104,8 @@ export function Footer({ locale }: FooterProps) {
             isArabic ? "text-right" : ""
           }`}
         >
-        <div className="order-1 mb-1 space-y-6 sm:space-y-7 lg:mb-0">
-          <div className={`flex ${isArabic ? "justify-start" : ""}`}>
+        <div className={`order-1 mb-1 space-y-6 sm:space-y-7 lg:mb-0 ${isArabic ? "text-center lg:text-right" : ""}`}>
+          <div className={`flex ${isArabic ? "justify-center lg:justify-start" : ""}`}>
             <div className="relative py-1">
               <span
                 aria-hidden="true"
@@ -125,7 +125,7 @@ export function Footer({ locale }: FooterProps) {
           <p
             className={
               isArabic
-                ? "pf-arabic max-w-md text-[1.02rem] font-normal leading-[1.96rem] text-[rgb(244_237_227_/_0.94)] sm:text-[1.08rem] sm:leading-[2.05rem]"
+                ? "pf-arabic mx-auto max-w-md text-[1.02rem] font-normal leading-[1.96rem] text-[rgb(244_237_227_/_0.94)] sm:text-[1.08rem] sm:leading-[2.05rem] lg:mx-0"
                 : "max-w-md text-sm leading-8 text-[rgb(239_229_213_/_0.84)]"
             }
           >
@@ -148,34 +148,37 @@ export function Footer({ locale }: FooterProps) {
 
         <div
           className={`order-2 flex w-full flex-col ${
-            isArabic ? "lg:justify-self-center" : "items-start lg:justify-self-center"
+            isArabic ? "text-right lg:justify-self-center" : "items-start lg:justify-self-center"
           }`}
         >
           <div
-            className={`flex flex-col ${
+            dir={isArabic ? "ltr" : undefined}
+            className={`${
               isArabic
-                ? "ms-auto w-fit min-w-[11.5rem] items-end text-right"
+                ? "flex w-full flex-col items-end pe-20 text-right lg:w-fit lg:min-w-[11.5rem] lg:pe-0"
                 : "w-full max-w-[13.5rem] items-start"
             }`}
           >
             <p
+              dir={isArabic ? "rtl" : undefined}
               className={
                 isArabic
-                  ? "pf-arabic w-fit border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-[0.96rem] font-medium leading-7 text-[rgb(239_229_213_/_0.9)]"
+                  ? "pf-arabic min-w-[8rem] border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-right text-[0.96rem] font-medium leading-7 text-[rgb(239_229_213_/_0.9)]"
                   : "w-fit border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-[0.64rem] font-semibold uppercase tracking-[0.24em] text-[rgb(223_207_183_/_0.76)]"
               }
             >
               {site.footer.navigationLabel[locale]}
             </p>
-            <div className={`mt-5 flex w-full flex-col ${isArabic ? "items-end" : "items-start"}`}>
+            <div className={`mt-5 flex w-full flex-col ${isArabic ? "items-end text-right" : "items-start"}`}>
               {footerNavItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`pf-link w-fit text-[rgb(223_207_183_/_0.76)] transition-colors hover:text-[rgb(236_224_205_/_0.94)] ${
+                  dir={isArabic ? "rtl" : undefined}
+                  className={`pf-link text-[rgb(223_207_183_/_0.76)] transition-colors hover:text-[rgb(236_224_205_/_0.94)] ${
                     isArabic
-                      ? "pf-arabic text-[0.92rem] font-normal leading-[2rem] text-right"
-                      : "text-[0.78rem] font-medium leading-[2rem] tracking-[0.018em]"
+                      ? "pf-arabic min-w-[8rem] text-right text-[0.92rem] font-normal leading-[2rem]"
+                      : "w-fit text-[0.78rem] font-medium leading-[2rem] tracking-[0.018em]"
                   }`}
                 >
                   {item.label}
@@ -187,14 +190,18 @@ export function Footer({ locale }: FooterProps) {
 
         <div
           className={`order-3 border-t border-[rgb(223_207_183_/_0.1)] pt-5 sm:pt-6 lg:border-t-0 lg:pt-0 ${
-            isArabic ? "w-full" : ""
+            isArabic ? "w-full text-right" : ""
           }`}
         >
-          <div className={isArabic ? "ms-auto flex w-full max-w-[18.75rem] flex-col items-end text-right lg:max-w-sm lg:ms-0 lg:items-start" : ""}>
+          <div
+            dir={isArabic ? "ltr" : undefined}
+            className={isArabic ? "flex w-full flex-col items-end pe-20 text-right lg:max-w-sm lg:pe-0" : ""}
+          >
             <p
+              dir={isArabic ? "rtl" : undefined}
               className={
                 isArabic
-                  ? "pf-arabic w-fit border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-[1rem] font-medium leading-7 text-[rgb(239_229_213_/_0.94)]"
+                  ? "pf-arabic min-w-[8rem] border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-right text-[1rem] font-medium leading-7 text-[rgb(239_229_213_/_0.94)]"
                   : "text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[rgb(223_207_183_/_0.86)]"
               }
             >
@@ -203,15 +210,17 @@ export function Footer({ locale }: FooterProps) {
 
           <div className={`mt-5 ${isArabic ? "w-full text-right" : ""}`}>
             <p
+              dir={isArabic ? "rtl" : undefined}
               className={
                 isArabic
-                  ? "pf-arabic max-w-sm text-[0.98rem] font-normal leading-[1.9rem] text-[rgb(239_229_213_/_0.88)] sm:text-[1.02rem] sm:leading-[1.96rem]"
+                  ? "pf-arabic w-full text-[0.98rem] font-normal leading-[1.9rem] text-[rgb(239_229_213_/_0.88)] sm:text-[1.02rem] sm:leading-[1.96rem] lg:max-w-sm"
                   : "max-w-sm text-sm leading-7 text-[rgb(239_229_213_/_0.78)]"
               }
             >
               {site.footer.contactBlurb[locale]}
             </p>
             <p
+              dir={isArabic ? "rtl" : undefined}
               className={`mt-5 ${
                 isArabic
                   ? "pf-arabic text-[0.94rem] font-medium text-[rgb(223_207_183_/_0.76)]"
@@ -220,7 +229,7 @@ export function Footer({ locale }: FooterProps) {
             >
               {locale === "ar" ? "تواصل عبر" : "Reach us via"}
             </p>
-            <div className={`mt-3 flex items-center gap-3 ${isArabic ? "ms-auto w-fit justify-end" : ""}`}>
+            <div className={`mt-3 flex items-center gap-3 ${isArabic ? "w-full justify-end" : ""}`}>
               {iconButtons.map((button) => (
                 <a
                   key={button.key}

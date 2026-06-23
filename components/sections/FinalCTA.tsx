@@ -26,10 +26,10 @@ export function FinalCTA({ locale }: FinalCTAProps) {
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,248,241,0.92),rgba(244,237,227,0.88))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,248,241,0.86),rgba(244,237,227,0.8))] sm:bg-[linear-gradient(180deg,rgba(251,248,241,0.92),rgba(244,237,227,0.88))]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_30%,rgba(167,125,73,0.12),transparent_55%)]" />
 
-        <div className="relative px-7 py-14 text-center sm:px-12 sm:py-18 lg:py-24">
+        <div className="relative px-6 py-10 text-center sm:px-12 sm:py-18 lg:py-24">
           <div className="mx-auto max-w-2xl">
             <p
               className={`${isArabic ? "pf-eyebrow-ar" : "pf-eyebrow"} mx-auto`}
@@ -50,7 +50,7 @@ export function FinalCTA({ locale }: FinalCTAProps) {
             >
               {content.body}
             </p>
-            <div className="mt-10 flex justify-center">
+            <div className="mt-8 flex justify-center sm:mt-10">
               <Button
                 href={content.cta.href}
                 target="_blank"

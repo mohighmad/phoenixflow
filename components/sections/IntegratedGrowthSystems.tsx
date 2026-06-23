@@ -26,8 +26,8 @@ export function IntegratedGrowthSystems({ locale }: IntegratedGrowthSystemsProps
         sizes="(min-width: 1024px) 56vw, 100vw"
       />
 
-      <div className={`max-w-xl ${isArabic ? "text-right" : ""}`}>
-        <p className={isArabic ? "pf-eyebrow-ar-dark" : "pf-eyebrow text-[var(--pf-mocha)]"}>
+      <div className={`max-w-xl ${isArabic ? "mx-auto text-center lg:mx-0 lg:text-right" : ""}`}>
+        <p className={isArabic ? "pf-eyebrow-ar-dark mx-auto lg:mx-0" : "pf-eyebrow text-[var(--pf-mocha)]"}>
           {content.eyebrow}
         </p>
         <h2
@@ -51,13 +51,13 @@ export function IntegratedGrowthSystems({ locale }: IntegratedGrowthSystemsProps
             <article
               key={block.code}
               className={`relative border-y border-[rgb(92_71_55_/_0.12)] bg-[rgb(251_248_241_/_0.42)] px-5 py-5 shadow-[0_16px_42px_-38px_rgba(92,71,55,0.34)] ${
-                isArabic ? "text-right" : ""
+                isArabic ? "text-center lg:text-right" : ""
               }`}
             >
               <span
                 aria-hidden="true"
                 className={`absolute top-0 h-px w-20 bg-[linear-gradient(90deg,rgb(167_125_73_/_0.45),transparent)] ${
-                  isArabic ? "right-5" : "left-5"
+                  isArabic ? "left-1/2 -translate-x-1/2 lg:left-auto lg:right-5 lg:translate-x-0" : "left-5"
                 }`}
               />
               <h3
@@ -72,7 +72,7 @@ export function IntegratedGrowthSystems({ locale }: IntegratedGrowthSystemsProps
               <p
                 className={
                   isArabic
-                    ? "pf-copy-arabic mt-2 max-w-[31rem] text-[0.98rem] leading-[1.9rem] text-[color:color-mix(in_srgb,var(--pf-mocha)_84%,white)]"
+                    ? "pf-copy-arabic mx-auto mt-2 max-w-[31rem] text-[0.98rem] leading-[1.9rem] text-[color:color-mix(in_srgb,var(--pf-mocha)_84%,white)] lg:mx-0"
                     : "mt-2 max-w-[30rem] text-sm leading-7 text-[color:color-mix(in_srgb,var(--pf-mocha)_82%,white)]"
                 }
               >

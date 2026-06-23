@@ -18,14 +18,14 @@ export function Methodology({ locale }: MethodologyProps) {
       className="overflow-hidden"
       contentClassName="grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-center"
     >
-      <div className={`max-w-xl ${isArabic ? "text-right lg:max-w-[36rem]" : ""}`}>
-        <p className={isArabic ? "pf-eyebrow-ar-light" : "pf-eyebrow text-[rgb(223_207_183_/_0.82)]"}>
+      <div className={`max-w-xl ${isArabic ? "mx-auto text-center lg:mx-0 lg:max-w-[36rem] lg:text-right" : ""}`}>
+        <p className={isArabic ? "pf-eyebrow-ar-light mx-auto lg:mx-0" : "pf-eyebrow text-[rgb(223_207_183_/_0.82)]"}>
           {content.eyebrow}
         </p>
         <h2
           className={`${
             isArabic
-              ? "pf-title-ar mt-6 max-w-[33rem] text-balance text-[rgb(251_248_241_/_0.98)] lg:leading-[1.2]"
+              ? "pf-title-ar mx-auto mt-6 max-w-[18.5rem] whitespace-normal text-balance break-words text-[rgb(251_248_241_/_0.98)] [overflow-wrap:anywhere] sm:max-w-[33rem] lg:mx-0 lg:leading-[1.2]"
               : "pf-title-medium mt-5 text-balance"
           }`}
         >
@@ -36,7 +36,7 @@ export function Methodology({ locale }: MethodologyProps) {
             isArabic
               ? "pf-copy-arabic pf-copy-arabic-dark mt-6 max-w-[31rem] text-[1.04rem] leading-[1.98]"
               : "pf-copy pf-copy-dark mt-6"
-          } ${isArabic ? "ms-auto" : ""}`}
+          } ${isArabic ? "mx-auto lg:ms-auto" : ""}`}
         >
           {content.body}
         </p>
@@ -45,7 +45,7 @@ export function Methodology({ locale }: MethodologyProps) {
           {content.points.map((point, index) => (
             <div
               key={point.label}
-              className={`border-[rgb(223_207_183_/_0.2)] ${
+              className={`border-[rgb(223_207_183_/_0.2)] ${isArabic ? "text-center lg:text-right" : ""} ${
                 index > 0
                   ? "border-t pt-7 sm:border-t-0 sm:border-s sm:pt-0 sm:ps-7"
                   : ""
@@ -53,7 +53,7 @@ export function Methodology({ locale }: MethodologyProps) {
             >
               <span
                 aria-hidden="true"
-                className="block h-px w-12 bg-[linear-gradient(90deg,rgb(167_125_73_/_0.64),rgb(223_207_183_/_0.08))]"
+                className={`block h-px w-12 bg-[linear-gradient(90deg,rgb(167_125_73_/_0.64),rgb(223_207_183_/_0.08))] ${isArabic ? "mx-auto lg:mx-0" : ""}`}
               />
               <p
                 className={

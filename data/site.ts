@@ -39,7 +39,7 @@ export const site = {
   } satisfies Record<Locale, NavItem[]>,
   footer: {
     navigationLabel: {
-      en: "Navigation",
+      en: "Site Links",
       ar: "روابط الموقع",
     } satisfies LocalizedText,
     contactLabel: {

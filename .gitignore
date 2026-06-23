@@ -29,6 +29,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
+*.err.log
+.codex-dev.log
+
+# local scripts / scratch helpers
+*.ps1
 
 # env files (can opt-in for committing if needed)
 .env*

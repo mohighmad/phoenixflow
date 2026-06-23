@@ -132,7 +132,7 @@ export function Header({ locale }: HeaderProps) {
           className="border-t border-[rgb(167_125_73_/_0.16)] bg-[rgb(251_248_241_/_0.98)] shadow-[0_28px_50px_-44px_rgba(24,33,43,0.48)] backdrop-blur-xl lg:hidden"
         >
           <div
-            className={`pf-container flex flex-col gap-1 py-4 ${isArabic ? "items-end text-right" : "items-start"}`}
+            className={`pf-container flex flex-col gap-1 py-4 ${isArabic ? "items-start text-right" : "items-start"}`}
           >
             {navItems.map((item) => (
               <a
@@ -157,7 +157,7 @@ export function Header({ locale }: HeaderProps) {
               rel="noreferrer"
               onClick={() => setMenuOpen(false)}
               dir="ltr"
-              className={`pf-link w-fit py-1 text-[13px] font-medium text-[var(--pf-coffee)] ${isArabic ? "ms-auto" : ""}`}
+              className="pf-link w-fit py-1 text-[13px] font-medium text-[var(--pf-coffee)]"
             >
               {site.whatsappDisplay}
             </a>

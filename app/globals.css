@@ -233,8 +233,8 @@ img {
 
 .pf-title {
   font-family: var(--font-display), "Georgia", "Times New Roman", serif;
-  font-size: 2.65rem;
-  line-height: 1;
+  font-size: 2.4rem;
+  line-height: 1.02;
   letter-spacing: 0;
   font-weight: 500;
 }
@@ -255,9 +255,9 @@ img {
     "Geeza Pro",
     "Segoe UI",
     sans-serif;
-  font-size: 2.08rem;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  font-size: 1.92rem;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
   font-weight: 600;
 }
 

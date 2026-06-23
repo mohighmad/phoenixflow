@@ -26,21 +26,21 @@ export function TransformationJourney({ locale }: TransformationJourneyProps) {
         sizes="(min-width: 1024px) 56vw, 100vw"
       />
 
-      <div className={`max-w-xl ${isArabic ? "text-right" : ""}`}>
-        <p className={isArabic ? "pf-eyebrow-ar-dark" : "pf-eyebrow text-[var(--pf-mocha)]"}>
+      <div className={`max-w-xl ${isArabic ? "mx-auto text-center lg:mx-0 lg:text-right" : ""}`}>
+        <p className={isArabic ? "pf-eyebrow-ar-dark mx-auto lg:mx-0" : "pf-eyebrow text-[var(--pf-mocha)]"}>
           {content.eyebrow}
         </p>
         <h2
-          className={`${isArabic ? "pf-title-ar max-w-[29rem] leading-[1.14]" : "pf-title-medium"} mt-5 text-balance`}
+          className={`${isArabic ? "pf-title-ar mx-auto max-w-[22rem] leading-[1.16] sm:max-w-[29rem] lg:mx-0" : "pf-title-medium"} mt-5 text-balance`}
         >
           {content.title}
         </h2>
         <p
           className={`${
             isArabic
-              ? "pf-copy-arabic max-w-[31rem] text-[1.03rem] leading-[1.96] text-[var(--pf-mocha)]"
+              ? "pf-copy-arabic max-w-[21.5rem] text-[1.03rem] leading-[1.96] text-[var(--pf-mocha)] sm:max-w-[31rem]"
               : "pf-copy text-[color:var(--pf-mocha)]"
-          } mt-6 ${isArabic ? "ms-auto" : ""}`}
+          } mt-6 ${isArabic ? "mx-auto lg:ms-auto" : ""}`}
         >
           {content.body}
         </p>
