@@ -18,10 +18,16 @@ export function Positioning({ locale }: PositioningProps) {
       className="border-y border-black/5"
       contentClassName="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center"
     >
-      <div className={`max-w-2xl ${isArabic ? "mx-auto text-center lg:mx-0 lg:text-right" : ""}`}>
-        <p className={isArabic ? "pf-eyebrow-ar mx-auto lg:mx-0" : "pf-eyebrow"}>{content.eyebrow}</p>
+      <div
+        className={`max-w-2xl ${
+          isArabic
+            ? "mx-auto text-center lg:mx-0 lg:text-right"
+            : "mx-auto text-center lg:mx-0 lg:text-left"
+        }`}
+      >
+        <p className={isArabic ? "pf-eyebrow-ar mx-auto lg:mx-0" : "pf-eyebrow mx-auto lg:mx-0"}>{content.eyebrow}</p>
         <h2
-          className={`${isArabic ? "pf-title-ar max-w-[32rem] leading-[1.18]" : "pf-title-medium"} mt-5 text-balance`}
+          className={`${isArabic ? "pf-title-ar max-w-[32rem] leading-[1.18]" : "pf-title-medium mx-auto max-w-[21rem] lg:mx-0 lg:max-w-none"} mt-5 text-balance`}
         >
           {content.title}
         </h2>
@@ -29,7 +35,7 @@ export function Positioning({ locale }: PositioningProps) {
           className={`${
             isArabic
               ? "pf-copy-arabic max-w-[34rem] text-[1.03rem] leading-[1.96]"
-              : "pf-copy"
+              : "pf-copy mx-auto max-w-[21rem] lg:mx-0 lg:max-w-none"
           } mt-6 ${isArabic ? "mx-auto lg:ms-auto" : ""}`}
         >
           {content.body}

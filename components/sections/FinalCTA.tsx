@@ -26,7 +26,7 @@ export function FinalCTA({ locale }: FinalCTAProps) {
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,248,241,0.77),rgba(244,237,227,0.71))] sm:bg-[linear-gradient(180deg,rgba(251,248,241,0.92),rgba(244,237,227,0.88))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,248,241,0.68),rgba(244,237,227,0.62))] sm:bg-[linear-gradient(180deg,rgba(251,248,241,0.92),rgba(244,237,227,0.88))]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_30%,rgba(167,125,73,0.12),transparent_55%)]" />
 
         <div className="relative px-6 py-10 text-center sm:px-12 sm:py-18 lg:py-24">
@@ -37,7 +37,7 @@ export function FinalCTA({ locale }: FinalCTAProps) {
               {content.eyebrow}
             </p>
             <h2
-              className={`${isArabic ? "pf-title-ar mx-auto max-w-[28rem] leading-[1.16]" : "pf-title-medium"} mt-6 text-balance`}
+              className={`${isArabic ? "pf-title-ar mx-auto max-w-[28rem] leading-[1.16]" : "pf-title-medium mx-auto max-w-[19.5rem] sm:max-w-none"} mt-6 text-balance`}
             >
               {content.title}
             </h2>
@@ -46,7 +46,7 @@ export function FinalCTA({ locale }: FinalCTAProps) {
                 isArabic
                   ? "pf-copy-arabic text-[1.03rem] leading-[1.96]"
                   : "pf-copy"
-              } mx-auto mt-6 max-w-xl`}
+              } mx-auto mt-6 max-w-[18.5rem] sm:max-w-xl`}
             >
               {content.body}
             </p>

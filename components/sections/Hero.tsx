@@ -34,7 +34,7 @@ export function Hero({ locale }: HeroProps) {
 
       <div className="pf-container relative pb-10 lg:flex lg:min-h-[calc(100svh-4.7rem)] lg:items-end lg:py-24">
         <div
-          className={`relative -mt-[3.75rem] w-full max-w-[34rem] rounded-[2rem] border border-[rgb(167_125_73_/_0.18)] bg-[linear-gradient(180deg,rgba(251,248,241,0.82),rgba(251,248,241,0.72))] px-5 py-6 shadow-[0_24px_70px_-42px_rgba(24,33,43,0.38)] backdrop-blur-[10px] sm:-mt-[4.5rem] sm:px-8 sm:py-8 lg:mt-0 lg:mr-auto lg:rounded-none lg:border-y-0 lg:border-e-0 lg:border-s lg:border-[rgb(167_125_73_/_0.44)] lg:bg-[linear-gradient(90deg,rgba(251,248,241,0.6),rgba(251,248,241,0.24),transparent)] lg:px-9 lg:shadow-[0_30px_80px_-58px_rgba(24,33,43,0.52)] lg:backdrop-blur-[3px] ${isArabic ? "text-center lg:text-right" : ""}`}
+          className={`relative -mt-[3.75rem] w-full max-w-[34rem] rounded-[2rem] border border-[rgb(167_125_73_/_0.18)] bg-[linear-gradient(180deg,rgba(251,248,241,0.82),rgba(251,248,241,0.72))] px-5 py-6 shadow-[0_24px_70px_-42px_rgba(24,33,43,0.38)] backdrop-blur-[10px] sm:-mt-[4.5rem] sm:px-8 sm:py-8 lg:mt-0 lg:mr-auto lg:rounded-none lg:border-y-0 lg:border-e-0 lg:border-s lg:border-[rgb(167_125_73_/_0.44)] lg:bg-[linear-gradient(90deg,rgba(251,248,241,0.6),rgba(251,248,241,0.24),transparent)] lg:px-9 lg:shadow-[0_30px_80px_-58px_rgba(24,33,43,0.52)] lg:backdrop-blur-[3px] ${isArabic ? "text-center lg:text-right" : "text-center lg:text-left"}`}
         >
           <p className={isArabic ? "pf-eyebrow-ar mx-auto lg:mx-0" : "pf-eyebrow"}>{content.eyebrow}</p>
           <h1 className="pf-title mt-5 text-balance">{content.title}</h1>
@@ -42,7 +42,7 @@ export function Hero({ locale }: HeroProps) {
             className={
               isArabic
                 ? "pf-title-ar mx-auto mt-4 max-w-[24rem] text-[var(--pf-mocha)] sm:max-w-[27rem] lg:mx-0"
-                : "mt-4 text-[1.05rem] font-medium uppercase tracking-[0.14em] text-[var(--pf-mocha)] sm:text-xl"
+                : "mx-auto mt-4 max-w-[18rem] text-[1rem] font-medium uppercase tracking-[0.12em] text-[var(--pf-mocha)] sm:max-w-none sm:text-xl sm:tracking-[0.14em] lg:mx-0"
             }
           >
             {content.headline}
@@ -51,16 +51,16 @@ export function Hero({ locale }: HeroProps) {
             className={`${
               isArabic
                 ? "pf-copy-arabic mx-auto max-w-[31rem] text-[1rem] leading-[1.95] text-[color:color-mix(in_srgb,var(--pf-mocha)_82%,white)] lg:mx-0"
-                : "pf-copy"
+                : "pf-copy mx-auto max-w-[20rem] lg:mx-0 lg:max-w-[31rem]"
             } mt-6`}
           >
             {content.supporting}
           </p>
 
-          <div className={`mt-8 flex flex-col gap-2.5 sm:mt-9 sm:flex-row sm:gap-3 ${isArabic ? "sm:justify-end" : ""}`}>
+          <div className={`mt-8 flex flex-col items-center gap-2.5 sm:mt-9 sm:flex-row sm:gap-3 lg:items-stretch ${isArabic ? "sm:justify-end" : ""}`}>
             <Button
               href={content.primaryCta.href}
-              className="w-full sm:min-w-[15rem] sm:w-auto"
+              className="w-full max-w-[18rem] sm:min-w-[15rem] sm:w-auto sm:max-w-none"
               language={locale}
             >
               {content.primaryCta.label}
@@ -68,7 +68,7 @@ export function Hero({ locale }: HeroProps) {
             <Button
               href={content.secondaryCta.href}
               variant="secondary"
-              className="w-full sm:min-w-[13rem] sm:w-auto"
+              className="w-full max-w-[18rem] sm:min-w-[13rem] sm:w-auto sm:max-w-none"
               language={locale}
             >
               {content.secondaryCta.label}

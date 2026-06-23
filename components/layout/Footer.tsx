@@ -100,12 +100,12 @@ export function Footer({ locale }: FooterProps) {
 
       <div className="pf-container relative py-16 sm:py-20">
         <div
-          className={`grid gap-x-7 gap-y-6 border border-[rgb(223_207_183_/_0.16)] bg-[rgb(17_23_28_/_0.46)] p-6 shadow-[0_34px_90px_-58px_rgba(0,0,0,0.92),0_1px_0_rgb(255_255_255_/_0.06)_inset] backdrop-blur-[3px] sm:gap-y-8 sm:p-8 lg:grid-cols-[1.16fr_0.72fr_0.9fr] lg:gap-12 ${
-            isArabic ? "text-right" : ""
+          className={`grid gap-x-7 gap-y-6 border border-[rgb(223_207_183_/_0.16)] bg-[rgb(17_23_28_/_0.46)] p-6 text-center shadow-[0_34px_90px_-58px_rgba(0,0,0,0.92),0_1px_0_rgb(255_255_255_/_0.06)_inset] backdrop-blur-[3px] sm:gap-y-8 sm:p-8 lg:grid-cols-[1.16fr_0.72fr_0.9fr] lg:gap-12 ${
+            isArabic ? "lg:text-right" : "lg:text-left"
           }`}
         >
-        <div className={`order-1 mb-1 space-y-6 sm:space-y-7 lg:mb-0 ${isArabic ? "text-center lg:text-right" : ""}`}>
-          <div className={`flex ${isArabic ? "justify-center lg:justify-start" : ""}`}>
+        <div className={`order-1 mb-1 space-y-6 sm:space-y-7 lg:mb-0 ${isArabic ? "lg:text-right" : "lg:text-left"}`}>
+          <div className="flex justify-center lg:justify-start">
             <div className="relative py-1">
               <span
                 aria-hidden="true"
@@ -125,8 +125,8 @@ export function Footer({ locale }: FooterProps) {
           <p
             className={
               isArabic
-                ? "pf-arabic mx-auto max-w-md text-[1.02rem] font-normal leading-[1.96rem] text-[rgb(244_237_227_/_0.94)] sm:text-[1.08rem] sm:leading-[2.05rem] lg:mx-0"
-                : "max-w-md text-sm leading-8 text-[rgb(239_229_213_/_0.84)]"
+                ? "pf-arabic mx-auto max-w-[18.75rem] text-[1.02rem] font-normal leading-[1.96rem] text-[rgb(244_237_227_/_0.94)] [overflow-wrap:anywhere] sm:max-w-md sm:text-[1.08rem] sm:leading-[2.05rem] lg:mx-0"
+                : "mx-auto max-w-[18.75rem] text-sm leading-8 text-[rgb(239_229_213_/_0.84)] sm:max-w-md lg:mx-0"
             }
           >
             {site.footer.description[locale]}
@@ -134,9 +134,9 @@ export function Footer({ locale }: FooterProps) {
           {isArabic ? (
             <div
               dir="rtl"
-              className="mx-auto max-w-md space-y-2 border-t border-[rgb(223_207_183_/_0.12)] pt-5 text-center"
+              className="mx-auto max-w-[18.75rem] space-y-2 border-t border-[rgb(223_207_183_/_0.12)] pt-5 text-center sm:max-w-md"
             >
-              <p className="pf-arabic text-[0.96rem] font-normal leading-[1.95rem] text-[rgb(251_248_241_/_0.88)]">
+              <p className="pf-arabic text-[0.96rem] font-normal leading-[1.95rem] text-[rgb(251_248_241_/_0.88)] [overflow-wrap:anywhere]">
                 اللهم صلِّ على سيدنا محمد وآله عدد كمال الله وكما يليق بكماله
               </p>
               <p className="pf-arabic mx-auto mt-2 text-[0.84rem] font-medium leading-7 text-[rgb(223_207_183_/_0.7)]">
@@ -148,28 +148,28 @@ export function Footer({ locale }: FooterProps) {
 
         <div
           className={`order-2 flex w-full flex-col ${
-            isArabic ? "text-right lg:justify-self-center" : "items-start lg:justify-self-center"
+            isArabic ? "items-center text-center lg:justify-self-center lg:text-right" : "items-center text-center lg:items-start lg:justify-self-center lg:text-left"
           }`}
         >
           <div
-            dir={isArabic ? "ltr" : undefined}
+            dir={isArabic ? "rtl" : undefined}
             className={`${
               isArabic
-                ? "flex w-full flex-col items-end pe-20 text-right lg:w-fit lg:min-w-[11.5rem] lg:pe-0"
-                : "w-full max-w-[13.5rem] items-start"
+                ? "flex w-full flex-col items-center text-center lg:w-fit lg:min-w-[11.5rem] lg:items-end lg:text-right"
+                : "flex w-full max-w-[13.5rem] flex-col items-center text-center lg:items-start lg:text-left"
             }`}
           >
             <p
               dir={isArabic ? "rtl" : undefined}
               className={
                 isArabic
-                  ? "pf-arabic min-w-[8rem] border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-right text-[0.96rem] font-medium leading-7 text-[rgb(239_229_213_/_0.9)]"
+                  ? "pf-arabic w-fit border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-center text-[0.96rem] font-medium leading-7 text-[rgb(239_229_213_/_0.9)] lg:text-right"
                   : "w-fit border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-[0.64rem] font-semibold uppercase tracking-[0.24em] text-[rgb(223_207_183_/_0.76)]"
               }
             >
               {site.footer.navigationLabel[locale]}
             </p>
-            <div className={`mt-5 flex w-full flex-col ${isArabic ? "items-end text-right" : "items-start"}`}>
+            <div className={`mt-5 flex w-full flex-col ${isArabic ? "items-center text-center lg:items-end lg:text-right" : "items-center text-center lg:items-start lg:text-left"}`}>
               {footerNavItems.map((item) => (
                 <a
                   key={item.href}
@@ -177,7 +177,7 @@ export function Footer({ locale }: FooterProps) {
                   dir={isArabic ? "rtl" : undefined}
                   className={`pf-link text-[rgb(223_207_183_/_0.76)] transition-colors hover:text-[rgb(236_224_205_/_0.94)] ${
                     isArabic
-                      ? "pf-arabic min-w-[8rem] text-right text-[0.92rem] font-normal leading-[2rem]"
+                      ? "pf-arabic w-fit text-center text-[0.92rem] font-normal leading-[2rem] lg:text-right"
                       : "w-fit text-[0.78rem] font-medium leading-[2rem] tracking-[0.018em]"
                   }`}
                 >
@@ -190,31 +190,31 @@ export function Footer({ locale }: FooterProps) {
 
         <div
           className={`order-3 border-t border-[rgb(223_207_183_/_0.1)] pt-5 sm:pt-6 lg:border-t-0 lg:pt-0 ${
-            isArabic ? "w-full text-right" : ""
+            isArabic ? "w-full text-center lg:text-right" : "text-center lg:text-left"
           }`}
         >
           <div
-            dir={isArabic ? "ltr" : undefined}
-            className={isArabic ? "flex w-full flex-col items-end pe-20 text-right lg:max-w-sm lg:pe-0" : ""}
+            dir={isArabic ? "rtl" : undefined}
+            className={isArabic ? "flex w-full flex-col items-center text-center lg:max-w-sm lg:items-start lg:text-right" : "flex w-full flex-col items-center text-center lg:items-start lg:text-left"}
           >
             <p
               dir={isArabic ? "rtl" : undefined}
               className={
                 isArabic
-                  ? "pf-arabic min-w-[8rem] border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-right text-[1rem] font-medium leading-7 text-[rgb(239_229_213_/_0.94)]"
+                  ? "pf-arabic w-fit border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-center text-[1rem] font-medium leading-7 text-[rgb(239_229_213_/_0.94)] lg:text-right"
                   : "text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[rgb(223_207_183_/_0.86)]"
               }
             >
               {site.footer.contactLabel[locale]}
             </p>
 
-          <div className={`mt-5 ${isArabic ? "w-full text-right" : ""}`}>
+          <div className={`mt-5 ${isArabic ? "w-full text-center lg:text-right" : "w-full text-center lg:text-left"}`}>
             <p
               dir={isArabic ? "rtl" : undefined}
               className={
                 isArabic
-                  ? "pf-arabic w-full text-[0.98rem] font-normal leading-[1.9rem] text-[rgb(239_229_213_/_0.88)] sm:text-[1.02rem] sm:leading-[1.96rem] lg:max-w-sm"
-                  : "max-w-sm text-sm leading-7 text-[rgb(239_229_213_/_0.78)]"
+                  ? "pf-arabic mx-auto w-full max-w-[18.5rem] text-[0.98rem] font-normal leading-[1.9rem] text-[rgb(239_229_213_/_0.88)] [overflow-wrap:anywhere] sm:max-w-sm sm:text-[1.02rem] sm:leading-[1.96rem] lg:mx-0"
+                  : "mx-auto max-w-[18.5rem] text-sm leading-7 text-[rgb(239_229_213_/_0.78)] sm:max-w-sm lg:mx-0"
               }
             >
               {site.footer.contactBlurb[locale]}
@@ -229,7 +229,7 @@ export function Footer({ locale }: FooterProps) {
             >
               {locale === "ar" ? "تواصل عبر" : "Reach us via"}
             </p>
-            <div className={`mt-3 flex items-center gap-3 ${isArabic ? "w-full justify-end" : ""}`}>
+            <div className={`mt-3 flex items-center justify-center gap-3 ${isArabic ? "w-full lg:justify-end" : "lg:justify-start"}`}>
               {iconButtons.map((button) => (
                 <a
                   key={button.key}
@@ -254,18 +254,20 @@ export function Footer({ locale }: FooterProps) {
       <div className="relative">
         <hr className="pf-rule opacity-60" />
         <div
-          className={`pf-container flex flex-col gap-3 py-6 text-[rgb(223_207_183_/_0.68)] sm:flex-row sm:items-center sm:justify-between ${isArabic ? "sm:flex-row-reverse text-right" : ""}`}
+          className={`pf-container flex flex-col items-center gap-3 py-6 text-center text-[rgb(223_207_183_/_0.68)] sm:flex-row sm:items-center sm:justify-between ${
+            isArabic ? "sm:flex-row-reverse sm:text-right" : "sm:text-left"
+          }`}
         >
           <p
             className={
               isArabic
-                ? "pf-arabic text-sm text-[rgb(223_207_183_/_0.82)]"
+                ? "pf-arabic max-w-[18.75rem] text-sm text-[rgb(223_207_183_/_0.82)] [overflow-wrap:anywhere] sm:max-w-none"
                 : "text-xs uppercase tracking-[0.26em] text-[rgb(223_207_183_/_0.82)]"
             }
           >
             {site.footer.tagline[locale]}
           </p>
-          <p className={isArabic ? "pf-arabic text-sm" : "text-xs tracking-[0.04em]"}>
+          <p className={isArabic ? "pf-arabic max-w-[18.75rem] text-sm [overflow-wrap:anywhere] sm:max-w-none" : "text-xs tracking-[0.04em]"}>
             © {new Date().getFullYear()} {site.name}. {site.footer.rights[locale]}
           </p>
         </div>

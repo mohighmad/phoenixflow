@@ -115,6 +115,10 @@ img {
   margin-inline: auto;
 }
 
+.pf-container > * {
+  min-width: 0;
+}
+
 .pf-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -237,6 +241,7 @@ img {
   line-height: 1.02;
   letter-spacing: 0;
   font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
 .pf-title-medium {
@@ -245,6 +250,7 @@ img {
   line-height: 1.06;
   letter-spacing: 0;
   font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
 .pf-title-ar {

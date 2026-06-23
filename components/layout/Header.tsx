@@ -18,7 +18,7 @@ export function Header({ locale }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const localeToggle = (
-    <div className="inline-flex items-center gap-1 border border-[rgb(167_125_73_/_0.22)] bg-[rgb(251_248_241_/_0.48)] p-1 shadow-[0_1px_0_rgb(255_255_255_/_0.62)_inset]">
+    <div className="inline-flex items-center gap-0.5 rounded-full border border-[rgb(167_125_73_/_0.24)] bg-[linear-gradient(180deg,rgb(251_248_241_/_0.76),rgb(244_237_227_/_0.52))] p-1 shadow-[0_1px_0_rgb(255_255_255_/_0.7)_inset,0_12px_28px_-24px_rgba(24,33,43,0.55)]">
       {locales.map((option) => {
         const active = option === locale;
 
@@ -29,8 +29,8 @@ export function Header({ locale }: HeaderProps) {
             aria-current={active ? "true" : undefined}
             className={
               active
-                ? "bg-[var(--pf-ink)] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--pf-paper)] shadow-[0_8px_18px_-12px_rgba(24,33,43,0.55)]"
-                : "px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.16em] text-[var(--pf-taupe)] transition-colors hover:text-[var(--pf-coffee)]"
+                ? "rounded-full bg-[linear-gradient(180deg,var(--pf-ink),var(--pf-navy))] px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--pf-paper)] shadow-[0_8px_18px_-12px_rgba(24,33,43,0.6)] sm:px-3 sm:tracking-[0.16em]"
+                : "rounded-full px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[color:color-mix(in_srgb,var(--pf-coffee)_74%,var(--pf-taupe))] transition-colors hover:bg-[rgb(167_125_73_/_0.08)] hover:text-[var(--pf-mocha)] focus-visible:bg-[rgb(167_125_73_/_0.1)] sm:px-3 sm:tracking-[0.16em]"
             }
           >
             {option.toUpperCase()}
@@ -41,7 +41,7 @@ export function Header({ locale }: HeaderProps) {
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[rgb(167_125_73_/_0.18)] bg-[rgb(251_248_241_/_0.84)] shadow-[0_1px_0_rgb(255_255_255_/_0.55)_inset] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full max-w-[100vw] overflow-hidden border-b border-[rgb(167_125_73_/_0.18)] bg-[rgb(251_248_241_/_0.84)] shadow-[0_1px_0_rgb(255_255_255_/_0.55)_inset] backdrop-blur-xl">
       <div className="pf-container flex min-h-[5.15rem] items-center justify-between gap-4 py-3 sm:min-h-[5.55rem] sm:py-3.5">
         <Link
           href={`/${locale}`}
@@ -61,7 +61,7 @@ export function Header({ locale }: HeaderProps) {
             priority
             unoptimized
             sizes="(min-width: 1024px) 160px, (min-width: 640px) 140px, 120px"
-            className="relative z-10 block h-auto w-[7.5rem] object-contain transition-opacity duration-300 group-hover:opacity-[0.9] sm:w-[8.75rem] lg:w-[10rem]"
+            className="relative z-10 block h-auto w-[6.85rem] object-contain transition-opacity duration-300 group-hover:opacity-[0.9] sm:w-[8.75rem] lg:w-[10rem]"
           />
         </Link>
 
@@ -88,7 +88,7 @@ export function Header({ locale }: HeaderProps) {
           <div>{localeToggle}</div>
         </div>
 
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className={`flex items-center gap-2 lg:hidden ${isArabic ? "" : "-translate-x-20 sm:translate-x-0"}`}>
           {localeToggle}
 
           <button
@@ -97,7 +97,7 @@ export function Header({ locale }: HeaderProps) {
             aria-expanded={menuOpen}
             aria-controls="pf-mobile-nav"
             onClick={() => setMenuOpen((value) => !value)}
-            className="inline-flex h-10 w-10 items-center justify-center border border-[rgb(167_125_73_/_0.28)] bg-[rgb(255_255_255_/_0.48)] text-[var(--pf-coffee)] transition-colors hover:text-[var(--pf-bronze)]"
+            className="inline-flex h-9 w-9 items-center justify-center border border-[rgb(167_125_73_/_0.28)] bg-[rgb(255_255_255_/_0.48)] text-[var(--pf-coffee)] transition-colors hover:text-[var(--pf-bronze)] sm:h-10 sm:w-10"
           >
             <svg
               width="16"
