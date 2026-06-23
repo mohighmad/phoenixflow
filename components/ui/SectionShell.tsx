@@ -31,7 +31,7 @@ export function SectionShell({
     <section
       id={id}
       className={joinClasses(
-        "relative py-20 sm:py-24 lg:py-32",
+        "relative py-16 sm:py-24 lg:py-32",
         toneClasses[tone],
         className,
       )}

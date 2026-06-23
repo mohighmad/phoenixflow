@@ -455,4 +455,9 @@ img {
   [id] {
     scroll-margin-top: 5rem;
   }
+
+  .pf-copy {
+    font-size: 1rem;
+    line-height: 1.78;
+  }
 }
