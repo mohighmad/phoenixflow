@@ -149,18 +149,6 @@ export function Header({ locale }: HeaderProps) {
               </a>
             ))}
 
-            <span aria-hidden="true" className="my-2 h-px w-full bg-[rgb(167_125_73_/_0.18)]" />
-
-            <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setMenuOpen(false)}
-              dir="ltr"
-              className="pf-link w-fit py-1 text-[13px] font-medium text-[var(--pf-coffee)]"
-            >
-              {site.whatsappDisplay}
-            </a>
           </div>
         </nav>
       ) : null}
