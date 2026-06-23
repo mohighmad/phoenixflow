@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/Button";
 import { SectionShell } from "@/components/ui/SectionShell";
+import { SectionVisual } from "@/components/ui/SectionVisual";
 import type { Locale } from "@/data/site";
 import { finalCtaContent, sectionAssets } from "@/data/sections";
 
@@ -15,8 +16,8 @@ export function FinalCTA({ locale }: FinalCTAProps) {
 
   return (
     <SectionShell tone="paper" className="overflow-hidden" contentClassName="relative">
-      <div className="pf-panel relative overflow-hidden rounded-[2.2rem] border-white/55">
-        <div className="absolute inset-0">
+      <div className="pf-panel relative overflow-hidden rounded-[2.2rem] border-white/55 bg-[linear-gradient(180deg,rgba(251,248,241,0.95),rgba(244,237,227,0.78))] sm:bg-transparent">
+        <div className="absolute inset-0 hidden sm:block">
           <Image
             fill
             alt=""
@@ -26,7 +27,7 @@ export function FinalCTA({ locale }: FinalCTAProps) {
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,248,241,0.68),rgba(244,237,227,0.62))] sm:bg-[linear-gradient(180deg,rgba(251,248,241,0.92),rgba(244,237,227,0.88))]" />
+        <div className="absolute inset-0 hidden bg-[linear-gradient(180deg,rgba(251,248,241,0.92),rgba(244,237,227,0.88))] sm:block" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_30%,rgba(167,125,73,0.12),transparent_55%)]" />
 
         <div className="relative px-6 py-10 text-center sm:px-12 sm:py-18 lg:py-24">
@@ -62,6 +63,15 @@ export function FinalCTA({ locale }: FinalCTAProps) {
               </Button>
             </div>
           </div>
+
+          <SectionVisual
+            src={sectionAssets.finalCta}
+            alt=""
+            className="mx-auto mt-8 w-full sm:hidden"
+            ratioClassName="aspect-[16/9]"
+            imageClassName="object-center"
+            sizes="(max-width: 639px) 100vw"
+          />
         </div>
       </div>
     </SectionShell>
