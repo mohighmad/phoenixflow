@@ -1,0 +1,458 @@
+@import "tailwindcss";
+
+:root {
+  --pf-ivory: #f4ede3;
+  --pf-paper: #fbf8f1;
+  --pf-sand: #dfcfb7;
+  --pf-taupe: #b7a48d;
+  --pf-coffee: #7b6549;
+  --pf-mocha: #5c4737;
+  --pf-navy: #233344;
+  --pf-ink: #18212b;
+  --pf-charcoal: #11171c;
+  --pf-stone: #171c21;
+  --pf-bronze: #a77d49;
+  --background: var(--pf-ivory);
+  --foreground: var(--pf-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-pf-ivory: var(--pf-ivory);
+  --color-pf-paper: var(--pf-paper);
+  --color-pf-sand: var(--pf-sand);
+  --color-pf-taupe: var(--pf-taupe);
+  --color-pf-coffee: var(--pf-coffee);
+  --color-pf-mocha: var(--pf-mocha);
+  --color-pf-navy: var(--pf-navy);
+  --color-pf-ink: var(--pf-ink);
+  --color-pf-charcoal: var(--pf-charcoal);
+  --color-pf-stone: var(--pf-stone);
+  --color-pf-bronze: var(--pf-bronze);
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-display);
+  --font-arabic: var(--font-arabic);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--pf-ivory);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: clip;
+  background:
+    radial-gradient(circle at top, rgb(167 125 73 / 0.12), transparent 28%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.55), transparent 26%),
+    var(--background);
+  color: var(--foreground);
+  font-family:
+    var(--font-geist-sans),
+    var(--font-arabic),
+    "IBM Plex Sans Arabic",
+    "Noto Sans Arabic",
+    "Segoe UI",
+    "Geeza Pro",
+    Tahoma,
+    Arial,
+    sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgb(167 125 73 / 0.06), transparent 42%),
+    radial-gradient(circle at 88% 84%, rgb(35 51 68 / 0.05), transparent 46%);
+  mask-image: radial-gradient(circle at center, black, transparent 96%);
+  opacity: 0.9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: rgb(167 125 73 / 0.2);
+  color: var(--pf-ink);
+}
+
+[id] {
+  scroll-margin-top: 5.75rem;
+}
+
+:where(a, button):focus-visible {
+  outline: 2px solid var(--pf-bronze);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.pf-page {
+  overflow-x: clip;
+}
+
+.pf-container {
+  width: min(100% - 2rem, 1180px);
+  margin-inline: auto;
+}
+
+.pf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: fit-content;
+  border-block: 1px solid color-mix(in srgb, var(--pf-bronze) 28%, transparent);
+  padding-block: 0.38rem;
+  color: var(--pf-coffee);
+  font-size: 0.77rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.pf-eyebrow::before,
+.pf-eyebrow::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 1.55rem;
+  background: color-mix(in srgb, var(--pf-bronze) 52%, transparent);
+}
+
+.pf-eyebrow-ar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: fit-content;
+  border-block: 1px solid color-mix(in srgb, var(--pf-bronze) 28%, transparent);
+  padding-block: 0.34rem;
+  font-family:
+    var(--font-arabic),
+    "IBM Plex Sans Arabic",
+    "Noto Sans Arabic",
+    "Geeza Pro",
+    "Segoe UI",
+    sans-serif;
+  color: color-mix(in srgb, var(--pf-mocha) 88%, var(--pf-bronze));
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.62;
+}
+
+.pf-eyebrow-ar::before,
+.pf-eyebrow-ar::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 1.35rem;
+  width: 1.5rem;
+  background: color-mix(in srgb, var(--pf-bronze) 54%, transparent);
+}
+
+.pf-eyebrow-ar-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: fit-content;
+  border-block: 1px solid rgb(223 207 183 / 0.22);
+  padding-block: 0.34rem;
+  font-family:
+    var(--font-arabic),
+    "IBM Plex Sans Arabic",
+    "Noto Sans Arabic",
+    "Geeza Pro",
+    "Segoe UI",
+    sans-serif;
+  color: rgb(239 229 213 / 0.96);
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.62;
+}
+
+.pf-eyebrow-ar-light::before,
+.pf-eyebrow-ar-light::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 1.35rem;
+  width: 1.5rem;
+  background: rgb(223 207 183 / 0.46);
+}
+
+.pf-eyebrow-ar-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: fit-content;
+  border-block: 1px solid color-mix(in srgb, var(--pf-mocha) 18%, transparent);
+  padding-block: 0.34rem;
+  font-family:
+    var(--font-arabic),
+    "IBM Plex Sans Arabic",
+    "Noto Sans Arabic",
+    "Geeza Pro",
+    "Segoe UI",
+    sans-serif;
+  color: color-mix(in srgb, var(--pf-mocha) 88%, var(--pf-bronze));
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.62;
+}
+
+.pf-eyebrow-ar-dark::before,
+.pf-eyebrow-ar-dark::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 1.35rem;
+  width: 1.5rem;
+  background: color-mix(in srgb, var(--pf-bronze) 52%, transparent);
+}
+
+.pf-title {
+  font-family: var(--font-display), "Georgia", "Times New Roman", serif;
+  font-size: 2.65rem;
+  line-height: 1;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.pf-title-medium {
+  font-family: var(--font-display), "Georgia", "Times New Roman", serif;
+  font-size: 2.2rem;
+  line-height: 1.06;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.pf-title-ar {
+  font-family:
+    var(--font-arabic),
+    "IBM Plex Sans Arabic",
+    "Noto Sans Arabic",
+    "Geeza Pro",
+    "Segoe UI",
+    sans-serif;
+  font-size: 2.08rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.pf-copy {
+  font-size: 1.03rem;
+  line-height: 1.9;
+  color: color-mix(in srgb, var(--pf-ink) 78%, white);
+}
+
+.pf-copy-arabic {
+  font-family:
+    var(--font-arabic),
+    "IBM Plex Sans Arabic",
+    "Noto Sans Arabic",
+    "Geeza Pro",
+    "Segoe UI",
+    sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.92;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--pf-mocha) 84%, white);
+}
+
+.pf-copy-arabic-dark {
+  color: rgb(239 229 213 / 0.9);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 0.12);
+}
+
+.pf-copy-dark {
+  color: color-mix(in srgb, white 88%, var(--pf-sand));
+}
+
+.pf-panel {
+  border: 1px solid rgb(24 33 43 / 0.09);
+  border-radius: 2rem;
+  background: rgb(251 248 241 / 0.82);
+  box-shadow: 0 20px 48px rgb(24 33 43 / 0.07);
+}
+
+.pf-frame {
+  border: 1px solid color-mix(in srgb, var(--pf-bronze) 34%, transparent);
+  border-radius: 1.45rem;
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.62),
+    rgb(251 248 241 / 0.9)
+  );
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.7) inset,
+    0 30px 72px -38px rgb(24 33 43 / 0.42);
+}
+
+.pf-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.6rem;
+  width: 2.6rem;
+  border: 1px solid rgb(223 207 183 / 0.24);
+  color: rgb(239 229 213 / 0.9);
+  background: rgb(17 23 28 / 0.38);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.08) inset,
+    0 14px 28px -24px rgb(0 0 0 / 0.8);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.pf-icon-btn:hover {
+  color: var(--pf-sand);
+  border-color: color-mix(in srgb, var(--pf-bronze) 55%, transparent);
+  background: rgb(167 125 73 / 0.12);
+  transform: translateY(-1px);
+}
+
+.pf-cta-primary {
+  position: relative;
+  isolation: isolate;
+}
+
+.pf-cta-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0.32rem;
+  z-index: -1;
+  border: 1px solid rgb(167 125 73 / 0.34);
+  opacity: 0.72;
+  transition:
+    inset 180ms ease,
+    opacity 180ms ease,
+    border-color 180ms ease;
+}
+
+.pf-cta-primary:hover::before {
+  inset: 0.22rem;
+  border-color: rgb(223 207 183 / 0.55);
+  opacity: 1;
+}
+
+.pf-link {
+  transition:
+    color 180ms ease,
+    opacity 180ms ease;
+}
+
+.pf-link:hover {
+  color: var(--pf-bronze);
+}
+
+.pf-display {
+  font-family: var(--font-display), "Georgia", "Times New Roman", serif;
+  letter-spacing: 0;
+}
+
+.pf-arabic {
+  font-family:
+    var(--font-arabic),
+    "IBM Plex Sans Arabic",
+    "Noto Sans Arabic",
+    "Geeza Pro",
+    "Segoe UI",
+    sans-serif;
+  font-feature-settings: "kern" 1;
+}
+
+.pf-arabic-line {
+  font-family:
+    var(--font-arabic),
+    "IBM Plex Sans Arabic",
+    "Noto Sans Arabic",
+    "Geeza Pro",
+    "Segoe UI",
+    sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.72;
+  font-weight: 500;
+  color: var(--pf-coffee);
+}
+
+.pf-rule {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(167 125 73 / 0.45),
+    transparent
+  );
+}
+
+.pf-overline {
+  color: var(--pf-coffee);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .pf-title {
+    font-size: 3.45rem;
+  }
+
+  .pf-title-medium {
+    font-size: 2.75rem;
+  }
+
+  .pf-title-ar {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pf-title {
+    font-size: 4.6rem;
+  }
+
+  .pf-title-medium {
+    font-size: 3.35rem;
+  }
+
+  .pf-title-ar {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .pf-container {
+    width: min(100% - 1.25rem, 1180px);
+  }
+
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+}

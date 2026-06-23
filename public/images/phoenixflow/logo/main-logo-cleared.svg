@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 240" role="img" aria-labelledby="phoenixflow-logo-title phoenixflow-logo-desc">
+  <title id="phoenixflow-logo-title">Phoenixflow official logo</title>
+  <desc id="phoenixflow-logo-desc">PHOEN wordmark and XFLOW wordmark joined by a phoenix symbol replacing only the letter i.</desc>
+  <defs>
+    <linearGradient id="wordmark-bronze" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0d7a2" />
+      <stop offset="18%" stop-color="#c99957" />
+      <stop offset="42%" stop-color="#7e5434" />
+      <stop offset="72%" stop-color="#d7b27a" />
+      <stop offset="100%" stop-color="#5e3d24" />
+    </linearGradient>
+    <linearGradient id="symbol-bronze" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#efd6a5" />
+      <stop offset="22%" stop-color="#bb8747" />
+      <stop offset="55%" stop-color="#674323" />
+      <stop offset="80%" stop-color="#c79a62" />
+      <stop offset="100%" stop-color="#4f321c" />
+    </linearGradient>
+    <linearGradient id="symbol-glow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#f3dfb8" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#9a6533" stop-opacity="0.92" />
+    </linearGradient>
+    <filter id="phoenix-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#120c06" flood-opacity="0.34" />
+    </filter>
+  </defs>
+
+  <g filter="url(#phoenix-shadow)">
+    <text
+      x="28"
+      y="184"
+      fill="url(#wordmark-bronze)"
+      stroke="#23160d"
+      stroke-width="0.85"
+      paint-order="stroke fill"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="81"
+      font-weight="500"
+      letter-spacing="14"
+      textLength="424"
+      lengthAdjust="spacingAndGlyphs"
+    >PHOEN</text>
+    <text
+      x="544"
+      y="184"
+      fill="url(#wordmark-bronze)"
+      stroke="#23160d"
+      stroke-width="0.85"
+      paint-order="stroke fill"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="81"
+      font-weight="500"
+      letter-spacing="14"
+      textLength="404"
+      lengthAdjust="spacingAndGlyphs"
+    >XFLOW</text>
+
+    <g
+      transform="translate(492 112)"
+      fill="none"
+      stroke="url(#symbol-bronze)"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M -8 18 C -23 3 -28 -18 -22 -44 C -30 -35 -36 -22 -38 -8 C -40 9 -34 24 -21 36" stroke-width="8.8" />
+      <path d="M -11 12 C -23 5 -32 -3 -40 -15" stroke-width="6.1" />
+      <path d="M -9 24 C -22 25 -31 23 -42 17" stroke-width="5.1" />
+
+      <path d="M 8 18 C 23 3 28 -18 22 -44 C 30 -35 36 -22 38 -8 C 40 9 34 24 21 36" stroke-width="8.8" />
+      <path d="M 11 12 C 23 5 32 -3 40 -15" stroke-width="6.1" />
+      <path d="M 9 24 C 22 25 31 23 42 17" stroke-width="5.1" />
+
+      <path d="M 1 46 C 9 21 12 -3 9 -24 C 8 -38 12 -47 20 -52 C 13 -55 5 -52 0 -44 C -6 -34 -7 -19 -3 1 C 1 21 -1 38 -8 50" stroke-width="9.7" />
+      <path d="M 0 2 C -8 11 -9 23 -3 31 C 4 27 9 18 9 9 C 9 4 6 1 0 2 Z" fill="url(#symbol-glow)" stroke="#7c4e2f" stroke-width="1.2" />
+      <path d="M 10 -49 C 18 -55 28 -55 36 -47 C 29 -45 22 -40 16 -33 C 18 -39 17 -44 10 -49 Z" fill="url(#symbol-glow)" stroke="#7c4e2f" stroke-width="1.1" />
+      <path d="M 20 -41 C 26 -39 30 -36 32 -32" stroke-width="2.8" />
+      <path d="M 7 -39 C 14 -35 22 -33 29 -34 C 25 -29 20 -25 13 -22" stroke-width="4.9" />
+
+      <path d="M -2 48 C -5 68 -10 84 -16 101" stroke-width="7.3" />
+      <path d="M 6 46 C 10 66 16 82 24 98" stroke-width="5.6" />
+      <path d="M 12 38 C 18 51 25 63 32 72" stroke-width="4.2" />
+    </g>
+  </g>
+</svg>
