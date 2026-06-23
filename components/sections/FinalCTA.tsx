@@ -30,8 +30,8 @@ export function FinalCTA({ locale }: FinalCTAProps) {
         <div className="absolute inset-0 hidden bg-[linear-gradient(180deg,rgba(251,248,241,0.92),rgba(244,237,227,0.88))] sm:block" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_30%,rgba(167,125,73,0.12),transparent_55%)]" />
 
-        <div className="relative px-6 py-10 text-center sm:px-12 sm:py-18 lg:py-24">
-          <div className="mx-auto max-w-2xl">
+        <div className="relative px-0 py-10 text-center sm:px-12 sm:py-18 lg:py-24">
+          <div className="mx-auto max-w-2xl px-6 sm:px-0">
             <p
               className={`${isArabic ? "pf-eyebrow-ar" : "pf-eyebrow"} mx-auto`}
             >
