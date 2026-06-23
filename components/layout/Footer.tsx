@@ -148,12 +148,14 @@ export function Footer({ locale }: FooterProps) {
 
         <div
           className={`order-2 flex w-full flex-col ${
-            isArabic ? "items-end lg:justify-self-center" : "items-start lg:justify-self-center"
+            isArabic ? "lg:justify-self-center" : "items-start lg:justify-self-center"
           }`}
         >
           <div
-            className={`flex w-full max-w-[13.5rem] flex-col ${
-              isArabic ? "ms-auto items-end text-right" : "items-start"
+            className={`flex flex-col ${
+              isArabic
+                ? "ms-auto w-fit min-w-[11.5rem] items-end text-right"
+                : "w-full max-w-[13.5rem] items-start"
             }`}
           >
             <p
@@ -185,22 +187,21 @@ export function Footer({ locale }: FooterProps) {
 
         <div
           className={`order-3 border-t border-[rgb(223_207_183_/_0.1)] pt-5 sm:pt-6 lg:border-t-0 lg:pt-0 ${
-            isArabic
-              ? "ms-auto flex w-full max-w-sm flex-col items-end text-right lg:justify-self-start lg:ms-0 lg:items-start"
-              : ""
+            isArabic ? "w-full" : ""
           }`}
         >
-          <p
-            className={
-              isArabic
-                ? "pf-arabic w-fit border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-[1rem] font-medium leading-7 text-[rgb(239_229_213_/_0.94)]"
-                : "text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[rgb(223_207_183_/_0.86)]"
-            }
-          >
-            {site.footer.contactLabel[locale]}
-          </p>
+          <div className={isArabic ? "ms-auto flex w-full max-w-[18.75rem] flex-col items-end text-right lg:max-w-sm lg:ms-0 lg:items-start" : ""}>
+            <p
+              className={
+                isArabic
+                  ? "pf-arabic w-fit border-b border-[rgb(167_125_73_/_0.28)] pb-2 text-[1rem] font-medium leading-7 text-[rgb(239_229_213_/_0.94)]"
+                  : "text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[rgb(223_207_183_/_0.86)]"
+              }
+            >
+              {site.footer.contactLabel[locale]}
+            </p>
 
-          <div className={`mt-5 ${isArabic ? "ms-auto w-full text-right" : ""}`}>
+          <div className={`mt-5 ${isArabic ? "w-full text-right" : ""}`}>
             <p
               className={
                 isArabic
@@ -219,7 +220,7 @@ export function Footer({ locale }: FooterProps) {
             >
               {locale === "ar" ? "تواصل عبر" : "Reach us via"}
             </p>
-            <div className={`mt-3 flex items-center gap-3 ${isArabic ? "ms-auto justify-end" : ""}`}>
+            <div className={`mt-3 flex items-center gap-3 ${isArabic ? "ms-auto w-fit justify-end" : ""}`}>
               {iconButtons.map((button) => (
                 <a
                   key={button.key}
@@ -235,6 +236,7 @@ export function Footer({ locale }: FooterProps) {
                 </a>
               ))}
             </div>
+          </div>
           </div>
         </div>
         </div>
